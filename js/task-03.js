@@ -13,10 +13,16 @@ const images = [
   },
 ];
 
-const newImgArray = images.map(({ url, alt }) => { 
-  const ulOfImages = document.querySelector('.gallery')
- const newImg = ulOfImages.insertAdjacentHTML('beforeend', `<li class="item--margin"><img src="${url}" alt="${alt}"></li>`);
-  return newImg
-})
 
 
+
+const makeImgArray = images.map(({ url, alt }) => {
+  const newLi = 
+  `<li class="item--margin"><img src="${url}" alt="${alt}"></li>`;
+return newLi}
+)
+const newUl = makeImgArray.join('')
+
+
+const ulOfImages = document.querySelector('.gallery')
+ulOfImages.insertAdjacentHTML('beforeend', newUl)
